@@ -12,6 +12,13 @@ body {
   background: url('../img/bg.gif') #000;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  margin: 0 20px;
+}
 a {
   color: inherit;
   text-decoration: none;

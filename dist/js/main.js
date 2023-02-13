@@ -1,5 +1,5 @@
-(() => {
-  const $word = document.getElementsByClassName('js-word')[0];
+// TYPE TEXT
+const typeTextFromRandom = ($word) => {
   const finalWord = $word.textContent;
   let tempWord = finalWord.split('');
   let intervals = [];
@@ -25,5 +25,16 @@
   }
   const renderInterval = setInterval(() => {
     $word.textContent = tempWord.join('');
+    if (finalWord === $word.textContent) {
+      clearInterval(renderInterval);
+    }
   }, 100);
-})()
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.js-word').forEach((item) => typeTextFromRandom(item));  
+  new Typed('.js-about', {
+    strings: ['Loading^800.^800.^800.', 'Web-developer. ^500Digital nomad.'],
+    typeSpeed: 70
+  });
+});
